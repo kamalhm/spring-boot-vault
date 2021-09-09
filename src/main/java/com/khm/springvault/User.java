@@ -1,5 +1,6 @@
 package com.khm.springvault;
 
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,6 +14,7 @@ public class User {
   @GeneratedValue
   private Long id;
   private String username;
+  @Convert(converter = PasswordConverter.class)
   private String password;
 
 }
